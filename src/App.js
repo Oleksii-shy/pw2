@@ -1,7 +1,8 @@
 import './App.css';
 import {useEffect, useState} from "react";
-import {getPosts, getUsers} from "./services/API";
+import {getUsers} from "./services/API";
 import Users from "./components/users/Users";
+
 
 
 function App() {

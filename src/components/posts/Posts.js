@@ -6,13 +6,13 @@ export default function Posts({userId}) {
     let [posts, setPosts] = useState([]);
     useEffect(() => {
         getPosts().then(value => {
-            setPosts(value.data)
+            setPosts(value.data);
         })
-    }, [])
-    const filter = posts.filter(value => value.userId === userId);
+    }, []);
+    let filter = posts.filter(value => value.userId === userId);
     return (
         <div>
             {filter.map(value => <Post key={value.id} item={value}/>)}
         </div>
-    )
+    );
 }

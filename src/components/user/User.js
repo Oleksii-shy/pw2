@@ -1,12 +1,13 @@
 import Posts from "../posts/Posts";
-import './User.css'
 import {useState} from "react";
+import './User.css'
 
-export default function User({item: {id, name}}) {
-    let [switcher, setSwitcher] = useState('show');
+export default function User({item: {id, name, email}}) {
+    let [switcher, setSwitcher] = useState('hide')
     return (
         <div>
-            {id}. {name}
+            <h4>{id}. {name}</h4>
+            <p>{email}</p>
             <button onClick={() => {
                 if (switcher === 'hide') {
                     setSwitcher('show')
@@ -14,8 +15,7 @@ export default function User({item: {id, name}}) {
                     setSwitcher('hide')
                 }
             }
-            }>
-                Post
+            }>Posts
             </button>
             <div className={switcher}>
                 <Posts userId={id}/>
